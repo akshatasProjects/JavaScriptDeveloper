@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Function Without Context</title>
+  </head>
+  <body>
+    <p id="output"></p>
+    <p>
+      The Value of "this" is the object that owns the method. Another name for
+      the object that determines the value of "this" in a function is
+      <i>context</i>
+    </p>
+
+    <script>
+      let output = document.getElementById("output");
+      const car = {
+        speed: 0,
+      };
+
+      const Truck = {
+        speed: 0,
+      };
+
+      function drive(vehicle, speedLimit) {
+        vehicle.speed = speedLimit;
+        output.innerText = `Driving at ${vehicle.speed} mph`;
+      }
+
+      drive(car, 55);
+      drive(Truck, 120);
+    </script>
+  </body>
+</html>

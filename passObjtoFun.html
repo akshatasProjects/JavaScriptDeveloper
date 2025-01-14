@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Passing an Object to a Function</h1>
+
+    <script>
+      const user = {
+        userName: "funGuy37",
+        password: "12345",
+      };
+
+      const loginStatus = login(user);
+      console.log(loginStatus);
+      console.warn(`The password is now ${user.password}`);
+
+      function login(userData) {
+        if (userData.password === "12345") {
+          let randomString = Math.random().toString(36).slice(-16);
+          userData.password = randomString;
+          return ` Terrible password. Your password has been reset to a random String`;
+        }
+        return "Logged In";
+      }
+    </script>
+  </body>
+</html>

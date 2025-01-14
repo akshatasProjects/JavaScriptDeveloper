@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chapter - 8</title>
+  </head>
+  <body>
+    <h1>Writing and running functions</h1>
+    <script>
+      // Passing by Value
+      const favFood = "Tacos";
+      makeDinner(favFood);
+
+      function makeDinner(whatToMake) {
+        console.log(`I see you want ${whatToMake} for dinner`);
+        whatToMake = "Salad";
+        console.log(`But I've decided ${whatToMake} for dinner`);
+      }
+      console.log(`The value of variable outside : ${favFood}`);
+    </script>
+  </body>
+</html>
+``
