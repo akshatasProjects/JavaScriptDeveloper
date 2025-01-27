@@ -6,6 +6,7 @@ class Cat {
 
   constructor(name, favoriteToy) {
     this.name = name;
+
     this.favoriteToy = favoriteToy;
   }
 
