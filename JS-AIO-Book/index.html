@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mouse Tracking Using Event Listener</title>
+    <script>
+      window.addEventListener("load", app);
+
+      function app() {
+        const trackArea = document.getElementById("tracking-area");
+        trackArea.addEventListener("mousemove", onMouseMove);
+        function onMouseMove(e) {
+          setPosition({ x: e.offsetX, y: e.offsetY });
+          console.log("Event", e);
+        }
+      }
+
+      function setPosition(pos) {
+        const { x, y } = pos;
+        const posEle = document.getElementById("current-position");
+        posEle.innerHTML = `x:${x} y:${y}`;
+      }
+    </script>
+  </head>
+  <style>
+    #tracking-area {
+      width: 100px;
+      height: 100px;
+      border: 1px solid;
+    }
+  </style>
+  <body>
+    <h1 id="current-position"></h1>
+    <div id="tracking-area">
+      Move Your mouse in here. If it's not working, click inside this box and
+      try again.
+    </div>
+
+    <!-- event Bubbling -->
+    <div id="button-group">
+      <p>
+        This is even Bubbling method where we can use single event on multiple
+        elements
+      </p>
+      <button>Click Me</button>
+      <button>No, Click Me</button>
+    </div>
+
+    <!-- Dispatch Event -->
+    <p>This is Dispatch Event</p>
+    <input type="text" id="test-text" value="This is test" />
+
+    <script src="eventBubbling.js"></script>
+    <script src="dispatchEvent.js"></script>
+  </body>
+</html>
