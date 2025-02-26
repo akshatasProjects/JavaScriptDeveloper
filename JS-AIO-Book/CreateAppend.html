@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To Do List using Create and Append</title>
+  </head>
+  <body>
+    <h1>Things I gotta do</h1>
+    <ul id="toDoList"></ul>
+    <input type="text" id="itemToAdd" />
+    <button id="add">Add Item</button>
+    <script>
+      const addBtnEle = document.getElementById("add");
+      const textEle = document.getElementById("itemToAdd");
+      const unorderEle = document.getElementById("toDoList");
+
+      addBtnEle.addEventListener("click", () => {
+        let newItem = document.createElement("li");
+        newItem.innerHTML = textEle.value;
+        unorderEle.append(newItem);
+        textEle.value = "";
+      });
+    </script>
+  </body>
+</html>
